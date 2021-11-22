@@ -1,2 +1,182 @@
 @charset "utf-8";
 @import "reset";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;900&display=swap');
+
+body{
+   background: #241025;
+}
+main {
+   width: 100%;
+   padding: 4vw;
+
+   section {
+      width: 100%;
+
+      &::after {
+         content: "";
+         display: block;
+         clear: both;
+      }
+
+      //최소박스의 넓이 설정용 더미 박스
+      //높이값은 설정하지 않고 숨김처리
+      .item-init {
+         width: 33.333%;
+         height: 0px;
+         opacity: 0;
+      }
+
+      .item {
+         width: 33.333%;
+         height: 30vh;
+         padding: 5px;
+         float: left;
+
+         .inner {
+            width: 100%;
+            height: 100%;
+            // box-shadow: 5px 5px 20px rgba(0,0,0,.1);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+
+            p{
+               display: block;
+               font: 400 24px/1 'Playfair Display';
+               letter-spacing: 1px;
+               color: #fff;
+            }
+            h3{               
+               writing-mode: vertical-rl;
+               text-orientation: upright;
+               color: #fff;
+               font: 900 48px/1 'Playfair Display';
+            }
+            h4{               
+               writing-mode: vertical-rl;
+               text-orientation: upright;
+               color: #fff;
+               font: 600 26px/1 'Playfair Display';
+            }
+            span{
+               font: 12px/1.1 'Playfair Display';
+               color: rgb(82, 82, 82);
+               padding-top: 30px;
+               display: block;
+            }
+            .btn{
+               padding-top: 30px;
+            }
+            a{
+               display: block;
+               width: 100px; height: 30px;
+               // padding-top: 30px;
+               border: 1px solid #fff;
+               text-align: center;
+               font: 600 12px/30px 'Playfair Display'; color: #fff;
+               transition: 1s;
+
+            }
+            &:hover{
+               a{
+                  background: #fff;
+                  color: #111;
+               }
+            }
+            .img{
+               width: 100%; height: 100%;
+               margin-left: 0px;
+               background-repeat: no-repeat;
+               background-size: cover;
+            }
+            .fas, .fab{
+               color: #fff;
+               font-size: 42px;
+            }
+         }
+         &[data-box="11"]{
+            width: 33.333%;
+            height: 30vh;
+            background: rgb(28, 28, 28);
+            overflow-y: scroll;
+         }
+         &[data-box="12"]{
+            width: 33.333%;
+            height: 60vh;
+         }
+         &[data-box="21"]{
+            width: 66.666%;
+            height: 30vh;
+         }
+         &[data-box="22"]{
+            width: 66.666%;
+            height: 60vh;
+         }
+         &[data-box="13"]{
+            width: 33.333%;
+            height: 90vh;
+            text-align: center;
+         }
+         &[data-box="31"]{
+            width: 100%;
+            height: 30vh;
+         }
+
+         &[data-index="1"]{
+            background: rgb(155,140,119);
+            padding: 0 30px;
+         }
+         &[data-index="8"]{
+            padding: 0 30px;
+         }
+
+         &[data-index="0"],&[data-index="5"], &[data-index="2"],&[data-index="7"],&[data-index="9"]{
+            background: rgb(9,9,9);
+         }
+         &[data-index="5"]{
+            background: #fff;
+            p{
+               font-weight: 600;
+               color: #111;
+            }
+         }
+         &[data-index="3"]{
+            overflow-x: hidden;
+            background-color: rgb(9,9,9);
+            padding: 0;
+            .img{
+               background-image: url(../img/image1.jpg);
+            }
+         }
+         &[data-index="4"]{
+            overflow-x: hidden;
+            background-color: rgb(9,9,9);
+            padding: 0;
+            .content_img{
+               width: 100%; height: 100%;
+               position: relative;
+               .img{
+                  background-image: url(../img/image3.jpg);
+                  background-attachment: fixed;
+               }
+               p{position: absolute;
+                   top: 50%; left: 50%;
+                   transform: translate(-50%, -50%);
+                  display: inline-block; width: 70%;} 
+            }
+         }
+         &[data-index="6"]{
+            overflow-x: hidden;
+            background-color: rgb(9,9,9);
+            padding: 0;
+            .img{
+               background-image: url(../img/image2.jpg);
+            }
+         }
+
+      }
+   }
+}
+
