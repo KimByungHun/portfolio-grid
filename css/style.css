@@ -42,7 +42,7 @@ main {
         align-items: center; }
         main section .item .inner p {
           display: block;
-          font: 400 24px/1 'Playfair Display';
+          font: 600 24px/1 'Playfair Display';
           letter-spacing: 1px;
           color: #fff; }
         main section .item .inner h3 {
@@ -83,6 +83,28 @@ main {
         main section .item .inner .fas, main section .item .inner .fab {
           color: #fff;
           font-size: 42px; }
+      main section .item.black {
+        position: relative;
+        background: red;
+        overflow: hidden; }
+        main section .item.black h3, main section .item.black h4, main section .item.black i {
+          position: relative;
+          z-index: 1; }
+        main section .item.black::before {
+          content: '';
+          position: absolute;
+          top: var(--y);
+          left: var(--x);
+          transform: translate(-50%, -50%);
+          width: 0px;
+          height: 0px;
+          background: red;
+          border-radius: 50%;
+          transition: width 0.5s, height 0.5s;
+          z-index: 1; }
+        main section .item.black:hover::before {
+          width: 200vh;
+          height: 200vh; }
       main section .item[data-box="11"] {
         width: 33.333%;
         height: 30vh;

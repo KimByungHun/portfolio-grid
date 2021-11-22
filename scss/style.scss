@@ -44,7 +44,7 @@ main {
 
             p{
                display: block;
-               font: 400 24px/1 'Playfair Display';
+               font: 600 24px/1 'Playfair Display';
                letter-spacing: 1px;
                color: #fff;
             }
@@ -94,6 +94,29 @@ main {
             .fas, .fab{
                color: #fff;
                font-size: 42px;
+            }
+         }
+         &.black{
+            position: relative;
+            background: red;
+            overflow: hidden;
+            h3, h4, i{
+               position: relative;
+               z-index: 1;
+            }
+            &::before{
+               content: '';
+               position: absolute;
+               top: var(--y); left: var(--x); 
+               transform: translate(-50%, -50%);
+               width: 0px; height: 0px; background: red;
+               border-radius: 50%;
+               transition: width 0.5s, height 0.5s;
+               z-index: 1;
+            }
+            
+            &:hover::before{
+               width: 200vh; height: 200vh;
             }
          }
          &[data-box="11"]{
