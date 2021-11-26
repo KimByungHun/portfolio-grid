@@ -85,7 +85,6 @@ main {
           font-size: 42px; }
       main section .item.black {
         position: relative;
-        background: red;
         overflow: hidden; }
         main section .item.black h3, main section .item.black h4, main section .item.black i {
           position: relative;
